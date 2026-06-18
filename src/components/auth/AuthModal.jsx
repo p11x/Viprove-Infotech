@@ -35,7 +35,7 @@ export function AuthModal({ isOpen, onClose }) {
 
     if (error) {
       setErrors({ submit: error.message })
-      toast.error('Invalid credentials')
+      toast.error(error.message || 'Invalid credentials')
     } else {
       onClose()
       toast.success('Welcome back!')
@@ -58,7 +58,7 @@ export function AuthModal({ isOpen, onClose }) {
 
     if (error) {
       setErrors({ submit: error.message })
-      toast.error('Signup failed')
+      toast.error(error.message || 'Signup failed')
     } else {
       onClose()
       toast.success('Account created! Welcome to Viprove Infotech')
