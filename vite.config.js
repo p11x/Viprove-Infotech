@@ -7,5 +7,23 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
-  },
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
+              return 'vendor'
+            }
+            if (id.includes('framer-motion') || id.includes('gsap')) {
+              return 'animations'
+            }
+            if (id.includes('@supabase')) {
+              return 'supabase'
+            }
+          }
+        }
+      }
+    }
+  }
 })
