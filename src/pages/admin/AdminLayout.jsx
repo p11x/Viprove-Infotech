@@ -19,11 +19,11 @@ export default function AdminLayout() {
 
   return (
     <div className="min-h-screen bg-bg-base flex">
-      <aside className={`fixed lg:static inset-y-0 left-0 z-40 w-64 bg-white border-r border-[rgba(79,70,229,0.15)] transform transition-transform duration-300 ${
+      <aside className={`fixed lg:static inset-y-0 left-0 z-40 w-64 bg-bg-surface border-r border-[var(--border)] transform transition-transform duration-300 ${
         mobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
       }`}>
         <div className="flex flex-col h-full">
-          <div className="p-6 border-b border-[rgba(79,70,229,0.15)]">
+          <div className="p-6 border-b border-[var(--border)]">
             <AnimatedLogo size="sm" showText={true} linkTo="/" />
             <div className="text-text-muted text-xs mt-1">Admin Panel</div>
           </div>
@@ -46,7 +46,7 @@ export default function AdminLayout() {
             ))}
           </nav>
 
-          <div className="p-4 border-t border-[rgba(79,70,229,0.15)]">
+          <div className="p-4 border-t border-[var(--border)]">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-10 h-10 rounded-full bg-accent-indigo flex items-center justify-center text-white font-medium">
                 {profile?.full_name?.charAt(0) || user?.email?.charAt(0) || 'U'}
@@ -75,7 +75,7 @@ export default function AdminLayout() {
       )}
 
       <div className="flex-1 lg:ml-0">
-        <header className="lg:hidden bg-white border-b border-[rgba(79,70,229,0.15)] px-4 py-3 flex items-center justify-between">
+        <header className="lg:hidden bg-bg-surface border-b border-[var(--border)] px-4 py-3 flex items-center justify-between">
           <div className="font-display font-bold text-text-primary">Admin Panel</div>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}

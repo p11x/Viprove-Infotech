@@ -238,3 +238,49 @@ body {
     padding: 60px 0;
   }
 }
+
+/* Force all page sections to use theme variables */
+section, main, article, aside, header, footer {
+  background-color: inherit;
+  color: inherit;
+}
+
+/* Select dropdown dark mode fix */
+[data-theme="dark"] select {
+  background-color: var(--bg-elevated);
+  color: var(--text-primary);
+  border-color: var(--border);
+  color-scheme: dark;
+}
+[data-theme="dark"] select option {
+  background-color: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+/* Input autofill dark mode fix */
+[data-theme="dark"] input:-webkit-autofill,
+[data-theme="dark"] input:-webkit-autofill:hover,
+[data-theme="dark"] input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px var(--bg-elevated) inset;
+  -webkit-text-fill-color: var(--text-primary);
+  caret-color: var(--text-primary);
+}
+
+/* Placeholder text */
+::placeholder { color: var(--text-muted); opacity: 1; }
+
+/* Links */
+a { color: inherit; }
+a:hover { color: var(--accent-primary); }
+
+/* hr dividers */
+hr { border-color: var(--border); }
+
+/* Tailwind prose overrides for dark mode */
+[data-theme="dark"] .text-gray-900 { color: var(--text-primary) !important; }
+[data-theme="dark"] .text-gray-600 { color: var(--text-secondary) !important; }
+[data-theme="dark"] .text-gray-500 { color: var(--text-muted) !important; }
+[data-theme="dark"] .bg-white      { background: var(--bg-surface) !important; }
+[data-theme="dark"] .bg-gray-50    { background: var(--bg-elevated) !important; }
+[data-theme="dark"] .bg-gray-100   { background: var(--bg-elevated) !important; }
+[data-theme="dark"] .border-gray-200 { border-color: var(--border) !important; }

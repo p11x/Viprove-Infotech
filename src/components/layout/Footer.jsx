@@ -142,13 +142,13 @@ export function Footer() {
                 <li>+1 (555) 123-4567</li>
               </ul>
               <form onSubmit={handleNewsletterSubmit} className="mt-4 flex gap-2">
-                <input
+<input
                   type="email"
                   placeholder="Your email"
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
-                  className="flex-1 bg-white border rounded-lg px-3 py-2 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-indigo transition-colors"
-                  style={{ backgroundColor: 'var(--bg-surface)', borderColor: 'var(--border)' }}
+                  className="flex-1 border rounded-lg px-3 py-2 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-indigo transition-colors"
+                  style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border)' }}
                 />
                 <button className="px-4 py-2 bg-accent-indigo hover:bg-indigo-400 text-white text-sm rounded-lg transition-colors">
                   Subscribe

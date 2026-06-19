@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import { Code2, Smartphone, TabletSmartphone, Apple, Cloud, Brain, Cpu, GitBranch } from 'lucide-react'
 import { ScrollReveal } from '../../ui/ScrollReveal'
 import { platforms } from '../../../data/content'
-import { useTheme } from '../../../context/ThemeContext'
 
 const iconMap = {
   Code2,
@@ -16,11 +15,7 @@ const iconMap = {
 }
 
 export function PlatformsGrid() {
-  const { isDark } = useTheme()
   const safePlatforms = platforms ?? []
-  const cardBg = isDark ? '#0F172A' : 'var(--bg-elevated)'
-  const cardText = isDark ? '#FFFFFF' : 'var(--text-primary)'
-  const cardBorder = isDark ? 'rgba(255,255,255,0.06)' : 'var(--border)'
 
   return (
     <section className="section-padding relative bg-surface">
@@ -31,7 +26,7 @@ export function PlatformsGrid() {
               <span
                 className="inline-flex items-center px-4 py-1.5 rounded-full border text-xs font-mono uppercase tracking-wider"
                 style={{ 
-                  background: isDark ? 'rgba(129,140,248,0.15)' : 'rgba(79,70,229,0.1)',
+                  background: 'rgba(79, 70, 229, 0.1)',
                   borderColor: 'var(--border)',
                   color: 'var(--accent-primary)'
                 }}
@@ -63,8 +58,8 @@ export function PlatformsGrid() {
                   transition={{ duration: 0.3, ease: 'easeOut' }}
                   className="h-full rounded-xl p-6 flex flex-col items-center text-center"
                   style={{
-                    background: cardBg,
-                    border: `1px solid ${cardBorder}`,
+                    background: 'var(--bg-elevated)',
+                    border: '1px solid var(--border)',
                   }}
                 >
                   <div
@@ -73,10 +68,10 @@ export function PlatformsGrid() {
                   >
                     <Icon className="w-7 h-7" style={{ color: platform.color }} />
                   </div>
-                  <h3 className="font-display font-semibold text-sm mb-1.5" style={{ color: cardText }}>
+                  <h3 className="font-display font-semibold text-sm mb-1.5" style={{ color: 'var(--text-primary)' }}>
                     {platform.label}
                   </h3>
-                  <p className="text-xs" style={{ color: cardText === '#FFFFFF' ? '#94A3B8' : 'var(--text-muted)' }}>{platform.desc}</p>
+                  <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{platform.desc}</p>
                 </motion.div>
               </ScrollReveal>
             )

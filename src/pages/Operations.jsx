@@ -52,7 +52,11 @@ export default function Operations() {
         </div>
       </section>
 
-      <section className="py-20 bg-white border-y border-[rgba(79,70,229,0.12)]">
+      <section className="py-20" style={{
+        background: 'var(--bg-surface)',
+        borderBottom: '1px solid var(--border)',
+        borderTop: '1px solid var(--border)',
+      }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <SectionHeader eyebrow="SLA" title="Our Commitments" subtitle="Industry-leading guarantees backed by real infrastructure." centered />

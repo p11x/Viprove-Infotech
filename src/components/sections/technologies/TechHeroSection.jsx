@@ -23,14 +23,13 @@ export function TechHeroSection() {
     'Testing and support',
     'Deployment and monitoring',
   ]
-  const heroBg = isDark ? '#0D1929' : '#0F172A'
 
   return (
     <section
       className="relative min-h-[85vh] flex items-center justify-center overflow-hidden"
-      style={{ background: heroBg }}
+      style={{ background: 'var(--bg-surface)' }}
     >
-      <div className="absolute inset-0" style={{ background: heroBg }} />
+      <div className="absolute inset-0" style={{ background: 'var(--bg-surface)' }} />
 
       <div
         className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none"
@@ -93,17 +92,17 @@ export function TechHeroSection() {
           animate="visible"
         >
           <motion.div variants={itemVariants} className="mb-6 flex">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#4F46E5] text-white text-xs font-mono uppercase tracking-wider bg-gradient-to-r from-indigo-500/20 to-cyan-500/20 bg-size-200 animate-shimmer">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--border)] text-text-secondary text-xs font-mono uppercase tracking-wider bg-gradient-to-r from-indigo-500/20 to-cyan-500/20 bg-size-200 animate-shimmer">
               // TECHNOLOGIES
             </span>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="font-display font-bold text-white mb-6" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}>
+          <motion.h1 variants={itemVariants} className="font-display font-bold text-text-primary mb-6" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}>
             <div>Modern Stacks for</div>
             <div className="gradient-text">Practical Products</div>
           </motion.h1>
 
-          <motion.p variants={itemVariants} className="text-[#94A3B8] text-lg max-w-xl mb-8 text-secondary">
+          <motion.p variants={itemVariants} className="text-text-secondary text-lg max-w-xl mb-8">
             We build with maintainable, scalable technologies for web, mobile, cloud, and AI-powered products.
           </motion.p>
 
@@ -128,15 +127,15 @@ export function TechHeroSection() {
         transition={{ duration: 0.6, delay: 0.5 }}
         className="absolute right-16 top-1/2 -translate-y-1/2 hidden lg:block w-72 rounded-2xl p-6"
         style={{
-          background: isDark ? 'rgba(34,45,66,0.85)' : 'rgba(15,23,42,0.85)',
+          background: 'var(--bg-card)',
           backdropFilter: 'blur(20px)',
           border: '1px solid var(--border)',
         }}
       >
-        <h3 className="text-white font-semibold mb-4">Focus Areas</h3>
+        <h3 className="text-text-primary font-semibold mb-4">Focus Areas</h3>
         <ul className="space-y-3">
           {focusList.map((item, i) => (
-            <li key={i} className="flex items-center gap-2 text-sm" style={{ color: isDark ? '#94A3B8' : '#94A3B8' }}>
+            <li key={i} className="flex items-center gap-2 text-sm text-text-secondary">
               <ChevronRight className="w-3 h-3 text-accent-indigo" />
               <span>{item}</span>
             </li>

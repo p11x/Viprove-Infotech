@@ -27,7 +27,11 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-20 bg-white border-y border-[rgba(79,70,229,0.12)]">
+      <section className="py-20" style={{
+        background: 'var(--bg-surface)',
+        borderBottom: '1px solid var(--border)',
+        borderTop: '1px solid var(--border)',
+      }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <SectionHeader eyebrow="Leadership" title="Meet the Team" subtitle="Experienced leaders driving innovation." centered />

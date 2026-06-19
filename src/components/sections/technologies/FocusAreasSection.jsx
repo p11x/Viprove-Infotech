@@ -26,7 +26,7 @@ export function FocusAreasSection() {
             const Icon = iconMap[area.icon] ?? Lightbulb
             return (
               <ScrollReveal key={area.title} direction={i % 2 === 0 ? 'left' : 'right'} delay={i * 0.1}>
-                <div className="h-full p-6 rounded-xl bg-bg-card border border-border hover:shadow-lg transition-shadow">
+                <div className="glass-card p-6 rounded-xl flex flex-col h-full">
                   <Icon className="w-12 h-12 text-accent-indigo mb-4" />
                   <h3 className="font-display font-semibold text-lg text-text-primary mb-2">{area.title}</h3>
                   <p className="text-text-secondary text-sm flex-1">{area.desc}</p>

@@ -45,8 +45,8 @@ export default function AnimatedLogo({ size = 'md', showText = true, linkTo = '/
     }
   }
 
-  const brandColor = isDark ? 'var(--text-primary)' : '#0F172A'
-  const taglineColor = isDark ? 'var(--text-secondary)' : '#64748B'
+  const brandColor = 'var(--text-primary)'
+  const taglineColor = 'var(--text-secondary)'
 
   return (
     <Link to={linkTo} style={{ textDecoration: 'none' }}>

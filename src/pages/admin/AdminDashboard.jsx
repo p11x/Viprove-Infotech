@@ -155,7 +155,7 @@ export default function AdminDashboard() {
       <div className="glass-card overflow-hidden mb-6">
         <table className="w-full">
           <thead>
-            <tr className="border-b border-[rgba(79,70,229,0.12)]">
+            <tr className="border-b border-[var(--border)]">
               <th className="px-4 py-3 text-left text-xs font-medium text-text-muted uppercase">Date</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-text-muted uppercase">Name</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-text-muted uppercase">Email</th>
@@ -172,7 +172,7 @@ export default function AdminDashboard() {
                 key={submission.id}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="border-b border-[rgba(79,70,229,0.08)] last:border-0"
+className="border-b border-[var(--border)] last:border-0"
               >
                 <td className="px-4 py-3 text-sm text-text-secondary">
                   {new Date(submission.created_at).toLocaleDateString()}
@@ -254,7 +254,7 @@ export default function AdminDashboard() {
       <div className="glass-card overflow-hidden">
         <table className="w-full">
           <thead>
-            <tr className="border-b border-[rgba(79,70,229,0.12)]">
+            <tr className="border-b border-[var(--border)]">
               <th className="px-4 py-3 text-left text-xs font-medium text-text-muted uppercase">Email</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-text-muted uppercase">Subscribed On</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-text-muted uppercase">Status</th>

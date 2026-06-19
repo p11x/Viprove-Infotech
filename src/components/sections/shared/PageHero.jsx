@@ -2,12 +2,8 @@ import { motion } from 'framer-motion'
 
 export function PageHero({ title, subtitle, badge }) {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
-      <div className="absolute inset-0 dot-grid-bg opacity-20" />
-      <div
-        className="absolute inset-0"
-        style={{ background: 'linear-gradient(135deg, #E8EEFF 0%, #F0F4FF 100%)' }}
-      />
+    <section className="relative pt-32 pb-20" style={{ position: 'relative', overflow: 'hidden' }}>
+      <div className="absolute inset-0 dot-grid-bg opacity-4" style={{ position: 'absolute', inset: 0, opacity: 0.4, pointerEvents: 'none' }} />
       <div className="absolute top-20 left-1/4 w-[500px] h-[500px] rounded-full opacity-20" style={{ background: 'radial-gradient(circle, rgba(79,70,229,0.12) 0%, transparent 70%)', filter: 'blur(100px)' }} />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full opacity-15" style={{ background: 'radial-gradient(circle, rgba(8,145,178,0.12) 0%, transparent 70%)', filter: 'blur(80px)' }} />
 
@@ -18,7 +14,13 @@ export function PageHero({ title, subtitle, badge }) {
         className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
       >
         {badge && (
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent-indigo/15 text-accent-indigo text-sm font-medium border border-accent-indigo/20 mb-6">
+          <span className="inline-block px-4 py-1.5 rounded-full mb-6" style={{
+            background: 'var(--bg-elevated)',
+            border: '1px solid var(--border)',
+            color: 'var(--accent-primary)',
+            fontSize: '0.875rem',
+            fontWeight: 500
+          }}>
             {badge}
           </span>
         )}
