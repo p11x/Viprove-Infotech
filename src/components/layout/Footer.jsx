@@ -68,7 +68,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="relative bg-[#E8EEFF] border-t border-[rgba(79,70,229,0.15)] overflow-hidden">
+    <footer className="relative bg-elevated border-t border-[var(--border)] overflow-hidden">
       <div className="absolute inset-0 dot-grid-bg opacity-10" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -93,7 +93,6 @@ export function Footer() {
               </div>
             </div>
           </ScrollReveal>
-
           <ScrollReveal delay={0.1}>
             <div>
               <h4 className="font-display font-semibold text-text-primary mb-4">Company</h4>
@@ -148,7 +147,8 @@ export function Footer() {
                   placeholder="Your email"
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
-                  className="flex-1 bg-white border border-[rgba(79,70,229,0.2)] rounded-lg px-3 py-2 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-indigo transition-colors"
+                  className="flex-1 bg-white border rounded-lg px-3 py-2 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-indigo transition-colors"
+                  style={{ backgroundColor: 'var(--bg-surface)', borderColor: 'var(--border)' }}
                 />
                 <button className="px-4 py-2 bg-accent-indigo hover:bg-indigo-400 text-white text-sm rounded-lg transition-colors">
                   Subscribe
@@ -159,7 +159,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="relative border-t border-[rgba(79,70,229,0.15)]">
+      <div className="relative border-t" style={{ borderColor: 'var(--border)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-text-muted text-sm">
             © 2024 Viprove Infotech. All rights reserved.

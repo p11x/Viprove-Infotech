@@ -56,7 +56,8 @@ export default function Contact() {
     setSubmitting(false)
   }
 
-  const inputCls = 'w-full bg-white border border-[rgba(79,70,229,0.2)] rounded-lg py-3 px-4 text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-indigo focus:ring-1 focus:ring-accent-indigo transition-all'
+  const inputCls = 'w-full border rounded-lg py-3 px-4 text-sm placeholder:text-text-muted focus:outline-none focus:border-accent-indigo focus:ring-1 focus:ring-accent-indigo transition-all' +
+    ' bg-surface text-text-primary border-[var(--border)]'
 
   return (
     <div>

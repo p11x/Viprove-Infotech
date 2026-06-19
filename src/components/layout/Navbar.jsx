@@ -6,6 +6,7 @@ import { navLinks } from '../../data/content'
 import { Button } from '../ui/Button'
 import { useAuth } from '../../hooks/useAuth'
 import AnimatedLogo from '../ui/AnimatedLogo'
+import ThemeToggle from '../ui/ThemeToggle'
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -52,9 +53,9 @@ export function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
         style={{
-          background: scrolled ? 'rgba(240,244,255,0.92)' : 'transparent',
+          background: scrolled ? 'var(--bg-overlay)' : 'transparent',
           backdropFilter: scrolled ? 'blur(20px)' : 'none',
-          borderBottom: scrolled ? '1px solid rgba(79,70,229,0.15)' : '1px solid transparent',
+          borderBottom: scrolled ? '1px solid var(--border)' : '1px solid transparent',
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -89,6 +90,7 @@ export function Navbar() {
             </div>
 
             <div className="hidden lg:flex items-center gap-3">
+              <ThemeToggle size="md" />
               {user ? (
                 <div className="relative" ref={dropdownRef}>
                   <button
@@ -110,7 +112,7 @@ export function Navbar() {
                         exit={{ opacity: 0, y: -10 }}
                         className="absolute right-0 top-full mt-2 w-56 glass-card py-2"
                       >
-                        <div className="px-4 py-2 border-b border-[rgba(79,70,229,0.1)]">
+                        <div className="px-4 py-2 border-b" style={{ borderColor: 'var(--border)' }}>
                           <div className="font-medium text-text-primary">{profile?.full_name || 'User'}</div>
                           <div className="text-xs text-text-muted">{user?.email}</div>
                         </div>
@@ -158,13 +160,14 @@ export function Navbar() {
           </div>
         </div>
 
-        <AnimatePresence>
+<AnimatePresence>
           {mobileOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-bg-base/95 backdrop-blur-xl border-b border-[rgba(79,70,229,0.15)]"
+              className="lg:hidden bg-bg-base/95 backdrop-blur-xl border-b"
+              style={{ borderColor: 'var(--border)' }}
             >
               <div className="px-4 py-6 space-y-4">
                 {navLinks.map((link, i) => (

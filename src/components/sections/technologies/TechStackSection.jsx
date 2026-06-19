@@ -22,7 +22,7 @@ export function TechStackSection() {
   const activeCategory = safeTechCategories[activeTab] || {}
 
   return (
-    <section className="section-padding relative bg-[#F0F4FF]">
+    <section className="section-padding relative bg-base">
       <div className="absolute inset-0 opacity-10 dot-grid-bg" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
@@ -76,7 +76,7 @@ export function TechStackSection() {
                       {tech.badge}
                     </div>
                   </div>
-                  <div className="flex-1 mx-4 h-2 bg-[#E2E8F0] rounded-full overflow-hidden">
+                  <div className="flex-1 mx-4 h-2 bg-elevated rounded-full overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: `${tech.level}%` }}

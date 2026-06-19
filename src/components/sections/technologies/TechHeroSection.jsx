@@ -1,6 +1,7 @@
 import { ChevronRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Button } from '../../ui/Button'
+import { useTheme } from '../../../context/ThemeContext'
 
 const containerVariants = {
   hidden: {},
@@ -15,19 +16,21 @@ const itemVariants = {
 }
 
 export function TechHeroSection() {
+  const { isDark } = useTheme()
   const focusList = [
     'Strategy and planning',
     'Design and development',
     'Testing and support',
     'Deployment and monitoring',
   ]
+  const heroBg = isDark ? '#0D1929' : '#0F172A'
 
   return (
     <section
       className="relative min-h-[85vh] flex items-center justify-center overflow-hidden"
-      style={{ background: '#0F172A' }}
+      style={{ background: heroBg }}
     >
-      <div className="absolute inset-0" style={{ background: '#0F172A' }} />
+      <div className="absolute inset-0" style={{ background: heroBg }} />
 
       <div
         className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none"
@@ -125,15 +128,15 @@ export function TechHeroSection() {
         transition={{ duration: 0.6, delay: 0.5 }}
         className="absolute right-16 top-1/2 -translate-y-1/2 hidden lg:block w-72 rounded-2xl p-6"
         style={{
-          background: 'rgba(15,23,42,0.85)',
+          background: isDark ? 'rgba(34,45,66,0.85)' : 'rgba(15,23,42,0.85)',
           backdropFilter: 'blur(20px)',
-          border: '1px solid rgba(255,255,255,0.1)',
+          border: '1px solid var(--border)',
         }}
       >
         <h3 className="text-white font-semibold mb-4">Focus Areas</h3>
         <ul className="space-y-3">
           {focusList.map((item, i) => (
-            <li key={i} className="flex items-center gap-2 text-sm text-[#94A3B8]">
+            <li key={i} className="flex items-center gap-2 text-sm" style={{ color: isDark ? '#94A3B8' : '#94A3B8' }}>
               <ChevronRight className="w-3 h-3 text-accent-indigo" />
               <span>{item}</span>
             </li>

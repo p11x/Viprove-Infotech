@@ -1,8 +1,15 @@
 import { useRef } from 'react'
 import { motion } from 'framer-motion'
+import { useTheme } from '../../context/ThemeContext'
 
 export function GlowCard({ children, glowColor = '#4F46E5', className = '', ...props }) {
   const cardRef = useRef(null)
+  const { isDark } = useTheme()
+
+  const getBg = () => {
+    if (isDark) return 'radial-gradient(600px circle at center, transparent, transparent), rgba(34,45,66,0.75)'
+    return 'rgba(255,255,255,0.75)'
+  }
 
   return (
     <motion.div
@@ -10,14 +17,15 @@ export function GlowCard({ children, glowColor = '#4F46E5', className = '', ...p
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={className}
+      style={{ background: getBg() }}
       onMouseEnter={(e) => {
         const rect = e.currentTarget.getBoundingClientRect()
         const x = e.clientX - rect.left
         const y = e.clientY - rect.top
-        e.currentTarget.style.background = `radial-gradient(600px circle at ${x}px ${y}px, ${glowColor}15, transparent 40%), rgba(255,255,255,0.75)`
+        e.currentTarget.style.background = `radial-gradient(600px circle at ${x}px ${y}px, ${glowColor}15, transparent 40%), ${isDark ? 'rgba(34,45,66,0.75)' : 'rgba(255,255,255,0.75)'}`
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.background = 'rgba(255,255,255,0.75)'
+        e.currentTarget.style.background = getBg()
       }}
       {...props}
     >

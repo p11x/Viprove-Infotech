@@ -8,27 +8,30 @@ import { Toaster } from 'react-hot-toast'
 import './index.css'
 import App from './App.jsx'
 import { AuthProvider } from './context/AuthContext'
+import { ThemeProvider } from './context/ThemeContext'
 
 gsap.registerPlugin(ScrollTrigger)
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
+      <ThemeProvider>
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+      </ThemeProvider>
       <Toaster
         position="bottom-right"
         toastOptions={{
           style: {
-            background: '#161b22',
-            color: '#f1f5f9',
-            border: '1px solid rgba(99,102,241,0.3)',
+            background: 'var(--bg-surface)',
+            color: 'var(--text-primary)',
+            border: '1px solid var(--border)',
             borderRadius: '12px',
             padding: '16px 20px',
           },
-          success: { iconTheme: { primary: '#6366f1', secondary: '#f1f5f9' } },
-          error: { iconTheme: { primary: '#ef4444', secondary: '#f1f5f9' } },
+          success: { iconTheme: { primary: 'var(--accent-primary)', secondary: 'var(--text-primary)' } },
+          error: { iconTheme: { primary: '#ef4444', secondary: 'var(--text-primary)' } },
         }}
       />
     </BrowserRouter>
