@@ -1,7 +1,7 @@
 export const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/services' },
-  { label: 'Products', href: '/products' },
+  { label: 'Technologies', href: '/technologies' },
   { label: 'Operations', href: '/operations' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
@@ -59,39 +59,110 @@ export const services = [
   },
 ]
 
-export const products = [
+export const platforms = [
+  { id: 'web',     icon: 'Code2',           label: 'Web',          color: '#4F46E5', desc: 'React, Angular, Vue, Next.js' },
+  { id: 'mobile',  icon: 'Smartphone',      label: 'Mobile',       color: '#0891B2', desc: 'React Native, Flutter, Swift' },
+  { id: 'android', icon: 'TabletSmartphone', label: 'Android',      color: '#16A34A', desc: 'Jetpack Compose, Kotlin, Java' },
+  { id: 'ios',     icon: 'Apple',           label: 'iOS',          color: '#7C3AED', desc: 'SwiftUI, Objective-C, Xcode' },
+  { id: 'cloud',   icon: 'Cloud',           label: 'Cloud',        color: '#EA580C', desc: 'AWS, Azure, GCP, Kubernetes' },
+  { id: 'ai',      icon: 'Brain',           label: 'AI / ML',      color: '#DB2777', desc: 'TensorFlow, PyTorch, OpenAI' },
+  { id: 'iot',     icon: 'Cpu',             label: 'IoT',          color: '#CA8A04', desc: 'Embedded C, MQTT, Raspberry Pi' },
+  { id: 'devops',  icon: 'GitBranch',       label: 'DevOps',       color: '#0F766E', desc: 'Docker, Jenkins, GitHub Actions' },
+]
+
+export const techCategories = [
   {
-    name: 'NexaCloud',
-    category: 'Cloud Platform',
-    desc: 'Unified multi-cloud management platform with auto-scaling, cost analytics, and one-click deployments across AWS, Azure, and GCP.',
-    badge: 'New',
-    price: 'From $299/mo',
-    features: ['Multi-cloud dashboard', 'Auto-scaling policies', 'Cost optimization AI', 'One-click deployments'],
+    category: 'Frontend',
+    accent: '#4F46E5',
+    icon: 'Monitor',
+    techs: [
+      { name: 'React',      level: 95, badge: 'Expert'     },
+      { name: 'Next.js',    level: 90, badge: 'Expert'     },
+      { name: 'Angular',    level: 82, badge: 'Advanced'   },
+      { name: 'Vue.js',     level: 78, badge: 'Advanced'   },
+      { name: 'TypeScript', level: 92, badge: 'Expert'     },
+      { name: 'Tailwind',   level: 96, badge: 'Expert'     },
+    ]
   },
   {
-    name: 'SecureVault',
-    category: 'Security Suite',
-    desc: 'Zero-trust security platform with real-time threat detection, automated compliance reporting, and encrypted data management.',
-    badge: 'Popular',
-    price: 'From $199/mo',
-    features: ['Zero-trust architecture', 'Real-time threat detection', 'Compliance automation', 'Data encryption'],
+    category: 'Backend',
+    accent: '#0891B2',
+    icon: 'Server',
+    techs: [
+      { name: 'Node.js',   level: 94, badge: 'Expert'   },
+      { name: 'Python',    level: 91, badge: 'Expert'   },
+      { name: 'Java',      level: 85, badge: 'Advanced' },
+      { name: 'Go',        level: 72, badge: 'Proficient'},
+      { name: 'GraphQL',   level: 88, badge: 'Advanced' },
+      { name: 'REST APIs', level: 97, badge: 'Expert'   },
+    ]
   },
   {
-    name: 'DataPulse',
-    category: 'Analytics',
-    desc: 'Enterprise analytics platform with real-time visualization, predictive modeling, and collaborative dashboards for data-driven teams.',
-    badge: 'Enterprise',
-    price: 'Custom',
-    features: ['Real-time analytics', 'Predictive modeling', 'Custom dashboards', 'Team collaboration'],
+    category: 'Cloud & DevOps',
+    accent: '#EA580C',
+    icon: 'Cloud',
+    techs: [
+      { name: 'AWS',             level: 90, badge: 'Expert'   },
+      { name: 'Azure',           level: 85, badge: 'Advanced' },
+      { name: 'GCP',             level: 80, badge: 'Advanced' },
+      { name: 'Docker',          level: 93, badge: 'Expert'   },
+      { name: 'Kubernetes',      level: 87, badge: 'Advanced' },
+      { name: 'GitHub Actions',  level: 91, badge: 'Expert'   },
+    ]
   },
   {
-    name: 'FlowOps',
-    category: 'DevOps Platform',
-    desc: 'End-to-end DevOps automation with CI/CD pipelines, infrastructure monitoring, and developer collaboration tools.',
-    badge: 'Beta',
-    price: 'Free Trial',
-    features: ['CI/CD pipelines', 'Infrastructure monitoring', 'Developer tools', 'Team collaboration'],
+    category: 'AI & Data',
+    accent: '#DB2777',
+    icon: 'Brain',
+    techs: [
+      { name: 'TensorFlow', level: 82, badge: 'Advanced'  },
+      { name: 'PyTorch',    level: 78, badge: 'Proficient'},
+      { name: 'OpenAI API', level: 91, badge: 'Expert'    },
+      { name: 'PostgreSQL', level: 93, badge: 'Expert'    },
+      { name: 'MongoDB',    level: 88, badge: 'Advanced'  },
+      { name: 'Redis',      level: 84, badge: 'Advanced'  },
+    ]
   },
+  {
+    category: 'Mobile',
+    accent: '#16A34A',
+    icon: 'Smartphone',
+    techs: [
+      { name: 'React Native',     level: 88, badge: 'Advanced' },
+      { name: 'Flutter',          level: 80, badge: 'Advanced' },
+      { name: 'Android / Kotlin', level: 85, badge: 'Advanced' },
+      { name: 'iOS / Swift',      level: 75, badge: 'Proficient'},
+      { name: 'Jetpack Compose',  level: 82, badge: 'Advanced' },
+      { name: 'Expo',             level: 86, badge: 'Advanced' },
+    ]
+  },
+  {
+    category: 'Security & QA',
+    accent: '#7C3AED',
+    icon: 'Shield',
+    techs: [
+      { name: 'Penetration Testing', level: 80, badge: 'Advanced'  },
+      { name: 'OWASP',              level: 87, badge: 'Advanced'  },
+      { name: 'Selenium',           level: 88, badge: 'Advanced'  },
+      { name: 'Cypress',            level: 85, badge: 'Advanced'  },
+      { name: 'Jest',               level: 91, badge: 'Expert'    },
+      { name: 'ISO 27001',          level: 90, badge: 'Certified' },
+    ]
+  },
+]
+
+export const techStats = [
+  { value: 40,  suffix: '+', label: 'Technologies Mastered' },
+  { value: 500, suffix: '+', label: 'Projects Delivered'    },
+  { value: 99,  suffix: '%', label: 'Uptime Guaranteed'     },
+  { value: 12,  suffix: '+', label: 'Years of Experience'   },
+]
+
+export const focusAreas = [
+  { title: 'Strategy & Planning',    icon: 'Lightbulb', desc: 'Technology roadmaps aligned to your business goals' },
+  { title: 'Design & Development',   icon: 'Layers',    desc: 'End-to-end product engineering from UI to infrastructure' },
+  { title: 'Testing & QA',           icon: 'CheckCircle',desc: 'Automated testing pipelines and quality assurance' },
+  { title: 'Deployment & Support',   icon: 'Rocket',    desc: '24/7 DevOps monitoring and production support' },
 ]
 
 export const operations = [

@@ -8,7 +8,7 @@ import AdminRoute from './components/auth/AdminRoute'
 
 const Home = lazy(() => import('./pages/Home'))
 const Services = lazy(() => import('./pages/Services'))
-const Products = lazy(() => import('./pages/Products'))
+const Technologies = lazy(() => import('./pages/Technologies'))
 const Operations = lazy(() => import('./pages/Operations'))
 const About = lazy(() => import('./pages/About'))
 const Contact = lazy(() => import('./pages/Contact'))
@@ -65,7 +65,7 @@ export default function App() {
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<PageTransition><Home /></PageTransition>} />
               <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
-              <Route path="/products" element={<PageTransition><Products /></PageTransition>} />
+              <Route path="/technologies" element={<PageTransition><Technologies /></PageTransition>} />
               <Route path="/operations" element={<PageTransition><Operations /></PageTransition>} />
               <Route path="/about" element={<PageTransition><About /></PageTransition>} />
               <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
