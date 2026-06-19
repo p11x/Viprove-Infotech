@@ -34,7 +34,7 @@ export function TechStackSection() {
           />
         </ScrollReveal>
 
-<ScrollReveal>
+        <ScrollReveal>
           <div className="flex flex-wrap justify-center gap-2 mb-12">
             {safeTechCategories.map((cat, i) => (
               <button
@@ -62,35 +62,32 @@ export function TechStackSection() {
             className="grid lg:grid-cols-2 gap-12 items-start"
           >
             <div className="space-y-6">
-              {activeCategory.techs?.map((tech, i) => {
-                const Icon = iconMap[techCategories[activeTab]?.icon] ?? Monitor
-                return (
-                  <motion.div
-                    key={tech.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 + i * 0.1 }}
-                    className="flex items-center justify-between"
-                  >
-                    <div>
-                      <div className="font-medium text-text-primary">{tech.name}</div>
-                      <div className={`inline-flex px-2 py-0.5 rounded text-xs font-medium ${badgeColor(tech.badge)} text-white`}>
-                        {tech.badge}
-                      </div>
+              {activeCategory.techs?.map((tech, i) => (
+                <motion.div
+                  key={tech.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + i * 0.1 }}
+                  className="flex items-center justify-between"
+                >
+                  <div>
+                    <div className="font-medium text-text-primary">{tech.name}</div>
+                    <div className={`inline-flex px-2 py-0.5 rounded text-xs font-medium ${badgeColor(tech.badge)} text-white`}>
+                      {tech.badge}
                     </div>
-                    <div className="flex-1 mx-4 h-2 bg-[#E2E8F0] rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: `${tech.level}%` }}
-                        transition={{ duration: 1, delay: i * 0.1 }}
-                        className="h-full rounded-full"
-                        style={{ backgroundColor: activeCategory.accent }}
-                      />
-                    </div>
-                    <span className="text-text-muted text-sm font-medium w-10 text-right">{tech.level}%</span>
-                  </motion.div>
-                )
-              })}
+                  </div>
+                  <div className="flex-1 mx-4 h-2 bg-[#E2E8F0] rounded-full overflow-hidden">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      animate={{ width: `${tech.level}%` }}
+                      transition={{ duration: 1, delay: i * 0.1 }}
+                      className="h-full rounded-full"
+                      style={{ backgroundColor: activeCategory.accent }}
+                    />
+                  </div>
+                  <span className="text-text-muted text-sm font-medium w-10 text-right">{tech.level}%</span>
+                </motion.div>
+              ))}
             </div>
 
             <div className="lg:sticky lg:top-32">

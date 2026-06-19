@@ -2,9 +2,9 @@ import { Badge } from './Badge'
 import { cn } from '../../hooks/useCn'
 
 export function SectionHeader({ eyebrow, title, subtitle, centered = false }) {
-  const safeTitle = typeof title === 'string' ? title : ''
-  const safeEyebrow = typeof eyebrow === 'string' ? eyebrow : ''
-  const safeSubtitle = typeof subtitle === 'string' ? subtitle : ''
+  const safeTitle = typeof title === 'string' ? title : String(title ?? '')
+  const safeEyebrow = typeof eyebrow === 'string' ? eyebrow : String(eyebrow ?? '')
+  const safeSubtitle = typeof subtitle === 'string' ? subtitle : String(subtitle ?? '')
   const words = safeTitle.split(' ')
   return (
     <div className={cn('mb-16', centered && 'text-center')}>
@@ -13,7 +13,7 @@ export function SectionHeader({ eyebrow, title, subtitle, centered = false }) {
           <Badge>{safeEyebrow}</Badge>
         </div>
       )}
-      {typeof title === 'string' ? (
+      {safeTitle && (
         <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-4 leading-tight">
           {words.map((word, i) => (
             <span key={i}>
@@ -26,8 +26,6 @@ export function SectionHeader({ eyebrow, title, subtitle, centered = false }) {
             </span>
           ))}
         </h2>
-      ) : (
-        title
       )}
       {safeSubtitle && (
         <p className={cn('text-text-secondary max-w-2xl text-lg', centered && 'mx-auto')}>
@@ -37,4 +35,11 @@ export function SectionHeader({ eyebrow, title, subtitle, centered = false }) {
       <div className="mt-4 h-1 w-20 bg-gradient-to-r from-accent-indigo to-accent-cyan rounded-full" />
     </div>
   )
+}
+
+SectionHeader.defaultProps = {
+  eyebrow: '',
+  title: '',
+  subtitle: '',
+  centered: false,
 }

@@ -12,6 +12,26 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
 
+  const fetchProfile = async (userId) => {
+    try {
+      const { data, error } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('id', userId)
+        .single()
+
+      if (error && error.code !== 'PGRST116') {
+        console.error('Error fetching profile:', error)
+      } else {
+        setProfile(data)
+      }
+    } catch (err) {
+      console.error('Profile fetch error:', err)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session)
@@ -38,26 +58,6 @@ export function AuthProvider({ children }) {
 
     return () => subscription.unsubscribe()
   }, [])
-
-  const fetchProfile = async (userId) => {
-    try {
-      const { data, error } = await supabase
-        .from('profiles')
-        .select('*')
-        .eq('id', userId)
-        .single()
-
-      if (error && error.code !== 'PGRST116') {
-        console.error('Error fetching profile:', error)
-      } else {
-        setProfile(data)
-      }
-    } catch (err) {
-      console.error('Profile fetch error:', err)
-    } finally {
-      setLoading(false)
-    }
-  }
 
   const signUp = async (email, password, fullName) => {
     const { data, error } = await supabase.auth.signUp({
