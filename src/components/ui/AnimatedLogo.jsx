@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { useTheme } from '../../context/ThemeContext'
 import logo from '../../assets/logo.png'
 
 export default function AnimatedLogo({ size = 'md', showText = true, linkTo = '/' }) {
+  const { isDark } = useTheme()
   const sizes = {
     sm: { img: 28, text: 'text-lg' },
     md: { img: 36, text: 'text-xl' },
@@ -42,6 +44,9 @@ export default function AnimatedLogo({ size = 'md', showText = true, linkTo = '/
       transition: { duration: 0.5, delay: 0.2, ease: [0.23, 1, 0.32, 1] }
     }
   }
+
+  const brandColor = isDark ? 'var(--text-primary)' : '#0F172A'
+  const taglineColor = isDark ? 'var(--text-secondary)' : '#64748B'
 
   return (
     <Link to={linkTo} style={{ textDecoration: 'none' }}>
@@ -83,7 +88,7 @@ export default function AnimatedLogo({ size = 'md', showText = true, linkTo = '/
                 fontFamily: 'Space Grotesk, sans-serif',
                 fontWeight: 700,
                 fontSize: current.text.replace('text-', ''),
-                color: '#0F172A',
+                color: brandColor,
                 letterSpacing: '-0.02em',
               }}
               className={current.text}
@@ -95,7 +100,7 @@ export default function AnimatedLogo({ size = 'md', showText = true, linkTo = '/
                 fontFamily: 'Inter, sans-serif',
                 fontWeight: 400,
                 fontSize: '0.65rem',
-                color: '#64748B',
+                color: taglineColor,
                 letterSpacing: '0.08em',
                 textTransform: 'uppercase',
               }}
