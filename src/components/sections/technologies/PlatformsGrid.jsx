@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { Code2, Smartphone, TabletSmartphone, Apple, Cloud, Brain, Cpu, GitBranch } from 'lucide-react'
 import { ScrollReveal } from '../../ui/ScrollReveal'
-import { SectionHeader } from '../../ui/SectionHeader'
 import { platforms } from '../../../data/content'
 
 const iconMap = {
@@ -16,20 +15,34 @@ const iconMap = {
 }
 
 export function PlatformsGrid() {
+  const safePlatforms = platforms ?? []
+
   return (
     <section className="section-padding relative bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <SectionHeader
-            eyebrow="// TECHNOLOGY INDEX"
-            title={<>Improve and Innovate with the <span className="gradient-text">Right Tech Stack</span></>}
-            subtitle="We work with modern frameworks and platforms to keep products performant, scalable, and ready for change."
-          />
+          <div className="mb-16">
+            <div className="mb-4">
+              <span
+                className="inline-flex items-center px-4 py-1.5 rounded-full border border-accent-indigo text-accent-indigo text-xs font-mono uppercase tracking-wider"
+                style={{ background: 'rgba(79,70,229,0.1)' }}
+              >
+                // TECHNOLOGY INDEX
+              </span>
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-4 leading-tight">
+              Improve and Innovate with the{' '}
+              <span className="gradient-text">Right Tech Stack</span>
+            </h2>
+            <p className="text-text-secondary max-w-2xl text-lg">
+              We work with modern frameworks and platforms to keep products performant, scalable, and ready for change.
+            </p>
+          </div>
         </ScrollReveal>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {platforms.map((platform, i) => {
-            const Icon = iconMap[platform.icon]
+          {safePlatforms.map((platform, i) => {
+            const Icon = iconMap[platform.icon] ?? Code2
             return (
               <ScrollReveal key={platform.id} direction="up" delay={i * 0.07}>
                 <motion.div

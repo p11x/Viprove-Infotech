@@ -7,6 +7,8 @@ import { focusAreas } from '../../../data/content'
 const iconMap = { Lightbulb, Layers, CheckCircle, Rocket }
 
 export function FocusAreasSection() {
+  const safeFocusAreas = focusAreas ?? []
+
   return (
     <section className="section-padding relative bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,13 +16,14 @@ export function FocusAreasSection() {
           <SectionHeader
             eyebrow="How We Work"
             title="Our Engineering Approach"
+            subtitle="Every project follows a proven engineering process."
             centered
           />
         </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {focusAreas.map((area, i) => {
-            const Icon = iconMap[area.icon]
+          {safeFocusAreas.map((area, i) => {
+            const Icon = iconMap[area.icon] ?? Lightbulb
             return (
               <ScrollReveal key={area.title} direction={i % 2 === 0 ? 'left' : 'right'} delay={i * 0.1}>
                 <div className="h-full p-6 rounded-xl bg-bg-card border border-border hover:shadow-lg transition-shadow">
