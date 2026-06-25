@@ -157,9 +157,9 @@ export default function Contact() {
               <ScrollReveal delay={0.1}>
                 <div className="grid gap-4">
                   {[
-                    { icon: Icons.Mail, title: 'Email', value: 'info@viprove.in' },
-                    { icon: Icons.Phone, title: 'Phone', value: '+91 40 6800 1234' },
-                    { icon: Icons.MapPin, title: 'Office', value: 'Plot No. 12, HITEC City, Madhapur, Hyderabad, Telangana - 500081' },
+                    { icon: Icons.Mail, title: 'Email', value: 'hr@viproveinfotech.com', href: 'mailto:hr@viproveinfotech.com' },
+                    { icon: Icons.Phone, title: 'Phone', value: '+91 70262 27723', href: 'tel:+917026227723' },
+                    { icon: Icons.MapPin, title: 'Office', value: 'Embassy Golf Links Business Park, Challaghatta, Bengaluru, Karnataka 560071' },
                   ].map(item => (
                     <GlowCard key={item.title} glowColor="#4F46E5" className="flex items-center gap-4 p-4">
                       <div className="w-10 h-10 rounded-lg bg-accent-indigo/15 flex items-center justify-center flex-shrink-0">
@@ -167,7 +167,11 @@ export default function Contact() {
                       </div>
                       <div>
                         <div className="text-text-muted text-xs">{item.title}</div>
-                        <div className="text-text-primary font-medium text-sm">{item.value}</div>
+                        {item.href ? (
+                          <a href={item.href} className="text-text-primary font-medium text-sm hover:text-accent-indigo transition-colors">{item.value}</a>
+                        ) : (
+                          <div className="text-text-primary font-medium text-sm">{item.value}</div>
+                        )}
                       </div>
                     </GlowCard>
                   ))}
@@ -189,7 +193,7 @@ export default function Contact() {
                   <div className="absolute inset-0 dot-grid-bg opacity-30" />
                   <div className="relative z-10 h-full flex items-center justify-center">
                     <Icons.MapPin className="w-8 h-8 text-accent-indigo mb-2" />
-                    <span className="text-text-secondary text-sm ml-2">HITEC City, Hyderabad, India</span>
+                    <span className="text-text-secondary text-sm ml-2">Embassy Golf Links, Bengaluru</span>
                   </div>
                 </GlowCard>
               </ScrollReveal>

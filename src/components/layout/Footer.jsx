@@ -133,13 +133,17 @@ export function Footer() {
             <div>
               <h4 className="font-display font-semibold text-text-primary mb-4">Contact</h4>
               <ul className="space-y-3 text-sm text-text-secondary">
-                <li>HITEC City, Hyderabad, Telangana - 500081, India</li>
+                <li>Embassy Golf Links Business Park, Challaghatta, Bengaluru, Karnataka 560071</li>
                 <li>
-                  <a href="mailto:info@viprove.in" className="hover:text-accent-indigo transition-colors">
-                    info@viprove.in
+                  <a href="mailto:hr@viproveinfotech.com" className="hover:text-accent-indigo transition-colors">
+                    hr@viproveinfotech.com
                   </a>
                 </li>
-                <li>+1 (555) 123-4567</li>
+                <li>
+                  <a href="tel:+917026227723" className="hover:text-accent-indigo transition-colors">
+                    +91 70262 27723
+                  </a>
+                </li>
               </ul>
               <form onSubmit={handleNewsletterSubmit} className="mt-4 flex gap-2">
 <input

@@ -266,3 +266,12 @@ export const team = [
     color: '#10b981',
   },
 ]
+
+export const contact = {
+  phone: '+91 70262 27723',
+  email: 'hr@viproveinfotech.com',
+  address: 'Embassy Golf Links Business Park, Challaghatta, Bengaluru, Karnataka 560071',
+  city: 'Bengaluru',
+  state: 'Karnataka',
+  pincode: '560071',
+}

@@ -108,9 +108,9 @@ Sections (in order):
 
 ### Contact `/contact`
 1. **Form** — Full Name, Email, Company, Service Interest, Budget, Message + toast on submit
-2. **Contact Info** — Email, Phone (+91 40 6800 1234), Hyderabad Office
+2. **Contact Info** — Email, Phone (+91 70262 27723), Bengaluru Office
 3. **Office Hours** — Mon–Fri 9AM–6:30PM IST / Sat 10AM–2PM IST
-4. **Map Placeholder** — Styled HITEC City, Hyderabad location card
+4. **Map Placeholder** — Styled Embassy Golf Links, Bengaluru location card
 
 ---
 
@@ -178,9 +178,9 @@ All font sizes use `clamp()` for fluid scaling between breakpoints.
 
 | Type | Detail |
 |------|--------|
-| 📧 Email | info@viprove.in |
-| 📞 Phone | +91 40 6800 1234 |
-| 📍 Address | Plot No. 12, HITEC City, Madhapur, Hyderabad, Telangana – 500081 |
+| 📧 Email | hr@viproveinfotech.com |
+| 📞 Phone | +91 70262 27723 |
+| 📍 Address | Embassy Golf Links Business Park, Challaghatta, Bengaluru, Karnataka 560071 |
 | 🕘 Weekdays | Mon–Fri: 9:00 AM – 6:30 PM IST |
 | 🕙 Saturday | 10:00 AM – 2:00 PM IST |
 | 🌐 Website | [viprove.in](https://viprove.in) |
@@ -210,7 +210,7 @@ See the `LICENSE` file for details.
 
 <div align="center">
 
-Made with ❤️ in Hyderabad, India
+Made with ❤️ in Bengaluru, India
 
 **Viprove Infotech** — Engineering Tomorrow's Infrastructure, Today
 
