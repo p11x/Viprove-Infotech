@@ -1,0 +1,14 @@
+{
+  "name": "Viprove Infotech",
+  "short_name": "Viprove",
+  "description": "Enterprise IT Solutions from Bengaluru",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1B2438",
+  "theme_color": "#4F46E5",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "/favicon.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/favicon.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

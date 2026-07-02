@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 export function ParticleCanvas() {
   const canvasRef = useRef(null)
@@ -13,6 +13,9 @@ export function ParticleCanvas() {
     let particles = []
     let mouse = { x: -1000, y: -1000 }
 
+    const isMobile = window.innerWidth < 768
+    const PARTICLE_COUNT = isMobile ? 40 : 80
+
     const resize = () => {
       canvas.width = canvas.offsetWidth
       canvas.height = canvas.offsetHeight
@@ -20,8 +23,7 @@ export function ParticleCanvas() {
 
     const createParticles = () => {
       particles = []
-      const count = 80
-      for (let i = 0; i < count; i++) {
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,

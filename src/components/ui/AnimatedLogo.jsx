@@ -74,6 +74,7 @@ export default function AnimatedLogo({ size = 'md', showText = true, linkTo = '/
             alt="Viprove Infotech Logo"
             width={current.img}
             height={current.img}
+            loading="eager"
             style={{
               objectFit: 'contain',
               display: 'block',
